@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8" />
+  <title id="pagetitle">kdxSMP</title>
+  <script src="https://unpkg.com/sober@0.2.13/dist/sober.min.js"></script>
+  <script src="./js/jQuery.js"></script>
+  <link rel="stylesheet" href="./res/css/sober-theme-turquoise.css" />
+  <link rel="stylesheet" href="./res/css/main.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<body>
+  <div id="noscript" style="text-align: center;"><b>由于您似乎禁用了Javascript或者出于其它原因，页面无法正常加载。<br>a此外，该应用不兼容IE系浏览器。</b></div><!-- 未启用js或者js加载失败的提示 -->
+  <s-page weigh="100vw" height="100vh" id="app" class="app"><s-scroll-view><div class="appScroll" style="height: 100vh;width: 100vw">
+    <!-- 标题栏 -->
+    <s-appbar>
+      <div id="titlebar" slot="headline"> kdxSMP </div>
+    </s-appbar>
+    <!--车牌号对话框-->
+    <s-dialog id="ip">
+      <div slot="headline">服务器地址</div>
+      <div slot="text">
+        请注意：加入服务器需要正版验证。<br>
+        支持JE 1.10.x-1.21或BE 1.20.10-1.21.x版本进入<br>
+        <b>服务器内请勿调皮捣蛋，否则按情况加以惩罚。</b>
+      </div>
+      <s-button onclick="copyip()" slot="action" type="text">复制IP地址</s-button>
+    </s-dialog>
+    <!-- Tipbox跳板 -->
+    <s-snackbar id='snackbar'></s-snackbar>
+    <!-- 页面主体元素 -->
+    <div id="welcome" class="welcome"><!-- 欢迎界面 -->
+      <p><big>kdxSMP</big></p>
+      <p>JE 1.21核心正版服务器</p>
+      <s-button onclick="ip();"><s-icon type="search" slot="start"></s-icon>加入服务器</s-button><br><br>
+    </div>
+  </div></s-scroll-view></s-page>
+  <script src="./index.js"></script>
+</body>
+</html>
